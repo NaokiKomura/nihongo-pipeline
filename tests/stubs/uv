@@ -1,0 +1,5 @@
+#!/bin/sh
+# uv の代わり。`uv run --quiet script.py args...` を python3 script.py args... として実行する
+shift
+[ "$1" = "--quiet" ] && shift
+exec python3 "$@"

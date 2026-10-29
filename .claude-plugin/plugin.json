@@ -1,0 +1,8 @@
+{
+  "name": "nihongo-pipeline",
+  "version": "0.1.0",
+  "description": "日本語の文章を、設計・下書き・説明の組み立て・推敲 (yomiyasu)・機械検査・別のモデルの判定に分けて仕上げる。hook で返答と文書の出力を工程に通す。",
+  "author": {"name": "NaokiKomura"},
+  "license": "MIT",
+  "keywords": ["japanese", "writing", "yomiyasu", "natural-japanese", "hooks", "subagents"]
+}

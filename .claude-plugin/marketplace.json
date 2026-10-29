@@ -1,0 +1,14 @@
+{
+  "name": "nihongo-pipeline",
+  "description": "日本語の文章を工程に分けて仕上げる Claude Code プラグイン",
+  "owner": {
+    "name": "NaokiKomura"
+  },
+  "plugins": [
+    {
+      "name": "nihongo-pipeline",
+      "source": "./",
+      "description": "日本語の文章を工程に分けて仕上げるスキル・サブエージェント・hook のセット"
+    }
+  ]
+}

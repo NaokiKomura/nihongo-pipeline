@@ -1,0 +1,27 @@
+{
+  "description": "日本語の依頼に返答の決まりを注入し、検査していない日本語の文書があれば返答を終える前に止める",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {"type": "command", "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/skills/nihongo-pipeline/scripts/jp_hook.py\" prompt", "timeout": 10}
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {"type": "command", "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/skills/nihongo-pipeline/scripts/jp_hook.py\" post-tool", "timeout": 10}
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {"type": "command", "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/skills/nihongo-pipeline/scripts/jp_hook.py\" stop", "timeout": 30}
+        ]
+      }
+    ]
+  }
+}
